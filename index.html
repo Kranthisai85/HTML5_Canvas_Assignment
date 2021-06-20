@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <div id="content-slider">
+            <div id="slider">
+                <div id="mask">
+                <ul>
+                   <li id="first" class="firstanimation">
+                <a href="#">
+                <img src="images/img_1.jpg" alt="Cougar"/>
+                </a>
+                <div class="tooltip">
+                <h1>Cougar</h1>
+                </div>
+                </li>
+    
+                <li id="second" class="secondanimation">
+                <a href="#">
+                <img src="images/img_2.jpg" alt="Lions"/>
+                </a>
+                <div class="tooltip">
+                <h1>Lions</h1>
+                </div>
+                </li>
+                
+                <li id="third" class="thirdanimation">
+                <a href="#">
+                <img src="images/img_3.jpg" alt="Snowalker"/>
+                </a>
+                <div class="tooltip">
+                <h1>Snowalker</h1>
+                </div>
+                </li>
+                            
+                <li id="fourth" class="fourthanimation">
+                <a href="#">
+                <img src="images/img_4.jpg" alt="Howling"/>
+                </a>
+                <div class="tooltip">
+                <h1>Howling</h1>
+                </div>
+                </li>
+                            
+                <li id="fifth" class="fifthanimation">
+                <a href="#">
+                <img src="images/img_5.jpg" alt="Sunbathing"/>
+                </a>
+                <div class="tooltip">
+                <h1>Sunbathing</h1>
+                </div>
+                </li>
+                </ul>
+                </div>
+                <div class="progress-bar"></div>
+            </div>
+        </div>
+    </div> 
+    <div class="godown"> 
+        <div class="file-upload-section file-upload-primary" onclick="document.getElementById('foto-file').click()">
+            <input id="foto-file" type="file">
+            Select Image
+        </div>
+
+        <!-- <div class="upper-buttons-section">
+            <table class="buttons-table">
+                <tr>
+                    <td><button class="operation-btn" id="crop" onclick="crop()">Crop</button></td>
+                    <td><button class="operation-btn" id="flip" onclick="filp()">Flip</button></td>
+                    <td>
+                        <button class="operation-btn" id="rotate">
+                        Rotate <input type="range" min="" max="360" value="0" class="slider" onchange="rotate(this)">
+                        </button>
+                    </td>
+                </tr>
+            </table>
+        </div> -->
+        
+        <div class="img-container godown">
+            <img id="foto-image" class="image" />
+        </div>
+        
+        <table class="buttons-section godown">
+            <tr>
+                <td id="long"><h5 style=" text-align: center; color: rgb(97, 96, 96); display: block;">Long press to adjust.</h5></td>
+                <td class="operation-btn" id="gray" style="display: none;width: 200px;">
+                    <p>
+                        <label for="gs">Grayscale</label>
+                        <input id="gs" name="gs" type="range" min="" max="100" value="0" onchange="greyfunc()" class="slider">
+                    </p>
+                    <p onclick="gback()" id="back">
+                        Back!
+                    </p>
+                </td>
+
+                <td class="operation-btn" id="huerotate" style="display: none;width: 200px;">
+                    <p>
+                        <label for="gs">Hue-Rotate</label>
+                        <input id="h" name="h" type="range" min="" max="100" value="0" onchange="hfunc()" class="slider">
+                    </p>
+                    <p onclick="hback()" id="back">
+                        Back!
+                    </p>
+                </td>
+                <td class="operation-btn" id="blur" style="display: none;width: 200px;">
+                    <p>
+                        <label for="gs">Blur</label>
+                        <input id="bl" name="bl" type="range" min="" max="100" value="0" onchange="blfunc()" class="slider">
+                    </p>
+                    <p onclick="blback()" id="back">
+                        Back!
+                    </p>
+                </td>
+
+                <td class="operation-btn" id="sepia" style="display: none;width: 200px;">
+                    <p>
+                        <label for="gs">Sepia</label>
+                        <input id="se" name="se" type="range" min="" max="100" value="0" onchange="sefunc()" class="slider">
+                    </p>
+                    <p onclick="seback()" id="back">
+                        Back!
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td> <button class="operation-btn" style="width: 200px;" id="GrayScale" style="display: block" data-long-press-delay="500" onclick="makeGrayScale()">GrayScale</button></td>
+                <td> <button class="operation-btn" style="width: 200px;" id="Hue_Rotate" style="display: block" data-long-press-delay="500">Hue-Rotate</button></td>
+                <td> <button class="operation-btn" style="width: 200px;" id="Blur" style="display: block" data-long-press-delay="500" onclick="makeBlur()">Blur</button></td>
+                <td> <button class="operation-btn" style="width: 200px;" id="Sepia" style="display: block" data-long-press-delay="500" >Sepia</button></td>
+            </tr>
+            <tr >
+                <td> <button class="operation-btn" style="width: 200px;" id="Brighter" style="display: block" data-long-press-delay="500" onclick="makeBrighter()">Brighter</button></td>
+                <td> <button class="operation-btn" style="width: 200px;" id="Dark" style="display: block" data-long-press-delay="500" onclick="makeDark()">Dark</button></td>
+                <td> <button class="operation-btn" style="width: 200px;" id="Emboss" style="display: block" data-long-press-delay="500" onclick="makeEmboss()">Emboss</button></td>
+                <td> <button class="operation-btn" style="width: 200px;" id="Sharp" style="display: block" data-long-press-delay="500" onclick="makeSharp()">Sharp</button></td>
+                
+            </tr>
+            <tr >
+                <td colspan="3"> 
+                    <button class="operation-btn download-btn btn btn-primary" id="downloads" onclick="download()">Download</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <footer><center><p style="color: grey;margin-top: 20%;">Designed By KRANTHI DEV SAI for GiveMeCertificate Assignment</p></footer></center>
+    <script src="https://rawcdn.githack.com/kousik19/foto.js/d604b02c69b6f037875bc4a3050b85d776dc4659/foto.js"></script>
+    <script src="script.js"></script>
+    <script src="long-press-event.min.js"></script>
+</body>
+</html>
+
